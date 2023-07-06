@@ -1,0 +1,39 @@
+Tag 1
+-Verfolgen des Leitfadens
+    -Fehler im Bereitgestellten Code
+        -Falsch = express --view=pugs --css=css local-library
+        -Richtig = express --view=pug --css=css local-library
+-Danach lief es ganz gut weiter
+-Gründlich lesen , aber recht langsam viel Text.
+-Mongo Datenbank erstellt und wie beschrieben eingebunden
+    -mongodb+srv://user:qwert123@cluster0.nf0dook.mongodb.net/local_library?retryWrites=true&w=majority
+-Pause (Kopf klar werden)
+-Weiter gemacht
+-hänge am genre.js 
+    -Nochmal lesen
+    -Vor Skripte überprüfen und versuchen anzuwenden
+    - Nach mehrmaligen Lesen kam es mir dann wie es sein sollte
+-populatedb.js angelegt
+    -Fehler in Terminal: Zeichen:& wird nur akzeptiert wenn es wie folgt umklammert wird Zeciehn "&"
+    -Falsch: mongodb+srv://user:qwert123@cluster0.nf0dook.mongodb.net/local_library?retryWrites=true&w=majority
+    -Richtig: mongodb+srv://user:qwert123@cluster0.nf0dook.mongodb.net/local_library?retryWrites=true"&"w=majority
+    -Program ist durchlaufen.
+    -Nach Angaben sollte es richtig gelaufen sein.
+-Controller eingefügt
+    -https://github.com/martindubb/nodejsmongodbmozilladeutsch/blob/main/Express-Tutorial-Teil-5.md
+    -Fehler: bookinstanceController.js , dort wurde bei der Behandlung der Buchinstanzen-Aktualisierung bei Post, 
+     ein Absatz Fehler gemacht und der Export auseinander gerissen.
+    -Die Tests scheinen geglückt anhand das keine 404 kam :D
+-Layout.pug mit Template gefüttert
+    -Abschnitt 7 habe ich nun beendet und werde für heute aufhören.
+    -https://github.com/martindubb/nodejsmongodbmozilladeutsch/blob/main/Express-Tutorial-Teil-7.md
+
+Faziet Tag 01
+    -Es ist sehr viel zum lesen mit einer Menge input.
+    -Zeitweise sehr verständlich aber auch Teilweise fühle ich mich überfordert mit dem Code.
+    -Ich muss versuchen es besser zu verstehen um Anwendungen erstellen zu können.
+    -Derzeit kann ich die Informationen sehr gut auslesen aber beim schreiben lande ich meist in Blockaden
+    -Ich denke das sich das irgendwann lösen wird aber bis dahin, dran bleiben Videos schauen Dokus lesen und den Kopf rauchen lassen.
+    -Die Aufgabe an sich ist sehr schön gemacht und zu meist verständlich.
+    -Ich würde bewerten das es mir hilft auf lange Sicht
+    -Eintrag Ende
