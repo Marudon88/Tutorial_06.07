@@ -1,14 +1,33 @@
 const BookInstance = require("../models/bookinstance");
 const asyncHandler = require("express-async-handler");
 
-// Anzeige der Liste aller Buchinstanzen.
+// Anzeige der Liste aller BookInstances.
 exports.bookinstance_list = asyncHandler(async (req, res, next) => {
-  res.send("NICHT IMPLEMENTIERT: Liste der Buchinstanzen");
+  const allBookInstances = await BookInstance.find().populate("book").exec();
+
+  res.render("bookinstance_list", {
+    title: "Liste der Buchinstanzen",
+    bookinstance_list: allBookInstances,
+  });
 });
 
-// Detailseite für eine bestimmte Buchinstanz anzeigen.
+// Detailseite für ein spezifisches Buchexemplar anzeigen.
 exports.bookinstance_detail = asyncHandler(async (req, res, next) => {
-  res.send(`NICHT IMPLEMENTIERT: Detail der Buchinstanz: ${req.params.id}`);
+  const bookInstance = await BookInstance.findById(req.params.id)
+    .populate("book")
+    .exec();
+
+  if (bookInstance === null) {
+    // Keine Ergebnisse.
+    const err = new Error("Buchexemplar nicht gefunden");
+    err.status = 404;
+    return next(err);
+  }
+
+  res.render("bookinstance_detail", {
+    title: "Buch:",
+    bookinstance: bookInstance,
+  });
 });
 
 // Anzeigen des Buchinstanzen-Erstellungsformulars bei GET.

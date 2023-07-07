@@ -1,14 +1,36 @@
 const Author = require("../models/author");
 const asyncHandler = require("express-async-handler");
+const Book = require("../models/book");
 
-// Anzeigen der Liste aller Autoren.
+// Anzeige der Liste aller Autoren.
 exports.author_list = asyncHandler(async (req, res, next) => {
-  res.send("NICHT IMPLEMENTIERT: Autorenliste");
+  const allAuthors = await Author.find().sort({ family_name: 1 }).exec();
+  res.render("author_list", {
+    title: "Autorenliste",
+    author_list: allAuthors,
+  });
 });
 
-// Detailseite für einen bestimmten Autor anzeigen.
+// Detailseite für einen spezifischen Autor anzeigen.
 exports.author_detail = asyncHandler(async (req, res, next) => {
-  res.send(`NICHT IMPLEMENTIERT: Autorendetails: ${req.params.id}`);
+  // Details des Autors und all seiner Bücher (parallel) abrufen
+  const [author, allBooksByAuthor] = await Promise.all([
+    Author.findById(req.params.id).exec(),
+    Book.find({ author: req.params.id }, "title summary").exec(),
+  ]);
+
+  if (author === null) {
+    // Keine Ergebnisse.
+    const err = new Error("Autor nicht gefunden");
+    err.status = 404;
+    return next(err);
+  }
+
+  res.render("author_detail", {
+    title: "Autor Detail",
+    author: author,
+    author_books: allBooksByAuthor,
+  });
 });
 
 // Anzeigen des Autoren-Erstellungsformulars bei GET.

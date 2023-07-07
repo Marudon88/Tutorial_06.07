@@ -37,3 +37,16 @@ Faziet Tag 01
     -Die Aufgabe an sich ist sehr schön gemacht und zu meist verständlich.
     -Ich würde bewerten das es mir hilft auf lange Sicht
     -Eintrag Ende
+
+Tag 02
+-Template einfügen via Contoller und .pug, es ist sehr interessant wie man alles untereinander verweben kann.
+-Template für das Genre, dort ist eine Funktion wo ich nicht verstehe in welchem Bezug die 1 steht bei genre_list: 1 
+    -const allGenres = await Genre.find().sort({genre_list: 1 }).exec();
+-Ein Bezugsfehler hatte sich ergeben das die Sortierung nicht so sein wollte wie ich es wollte.
+    -Nach einigen Tests und recherchen kam ich zu einem Ergebnis
+        -Falsch:
+            const allGenres = await Genre.find().sort({genre_list: 1 }).exec();
+        -Richtig
+            const allGenres = await Genre.find().sort({name: 1 }).exec();
+    -Wenige Buchstaben falsch aber riesen Wirkung, durch den Faslchen Bezug hatten wir keine Sortierung A-Zeichen
+-Auf zum letzten Abschnitt im Deutschen Tutorial
