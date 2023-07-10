@@ -50,3 +50,49 @@ Tag 02
             const allGenres = await Genre.find().sort({name: 1 }).exec();
     -Wenige Buchstaben falsch aber riesen Wirkung, durch den Faslchen Bezug hatten wir keine Sortierung A-Zeichen
 -Auf zum letzten Abschnitt im Deutschen Tutorial
+-Das Deutsche Tutorial ist beendet, aber ich glaube, da fehlt einiges gegenüber dem Englischen
+-Ich werde erstmal ein Commit machen für das Deutsche
+-Englische Varriante Part 6
+    -Erstmal stand prüfen und orientieren
+
+Tag 03
+-Die Deutsche Version ist nun da und weiter geht es mit Part 11
+    -Part 11 umfasst die folgenden Parts und ist daher ein Einleiter der eine Herrausforderung danach Bereitgestellten
+    -Ich werde mir Notizen machen von den Vorgängen denn auf diese baut es am Ende auf.
+-Part 12
+    Dort habe ich via POST eine Möglichkeit geschaffen Genres anzulegen auch wenn mir die Ausgabe auf der Seite nicht gefällt
+    das dort nach SUBMIT steht das es dieses Genre nicht gibt. Ergibt kein Sinn es sollte eher da stehen das es hinzugefügt wird.
+    Datein: genreController.js & genre_form.pug
+    Link: https://github.com/martindubb/nodejsmongodbmozilladeutsch/blob/main/Express-Tutorial-Teil-12.md
+-Part 13
+    Ähnlich wie 12
+    Todestag der author_from.pug hinzugefügt was auch funktioniert
+    Datein: authorControllers.js & author_from.pug
+    Link: https://github.com/martindubb/nodejsmongodbmozilladeutsch/blob/main/Express-Tutorial-Teil-13.md
+-Part 14
+    Wir könne Bücher hinzufügen.
+    Authoren sind im Dropdown Menü
+    Das Genre ist mit einer Auswahl und lässt keinen neues Genre Anlegen im selben Atemzug
+    Datein: bookController.js & book_form.pug
+    Link: https://github.com/martindubb/nodejsmongodbmozilladeutsch/blob/main/Express-Tutorial-Teil-14.md
+-Part 15
+    Ich habe eine Fehlermeldung das die DateTime nicht definiert ist.
+    Da mir ein Code Fehlte und eingefügt hatte muss ich das im NAchgangnochmal cheken bzw am nächsten tag erfragen.
+        C:\Users\User\schulung\MDN Express\local-library\views\bookinstance_detail.pug:20 18| 19| if bookinstance.status!='Available' > 20| 
+        p #[strong Due back:] #{bookinstance.due_back_formatted} 21| 22| hr 23| p DateTime is not defined
+        Laut der Meldung fehlt mir was wie folgt:
+            ReferenceError: C:\Users\User\schulung\MDN Express\local-library\views\bookinstance_detail.pug:20
+            18| 
+            19|   if bookinstance.status!='Available'
+            > 20|     p #[strong Due back:] #{bookinstance.due_back_formatted}
+            21| 
+            22|   hr
+            23|   p
+        Sieht eindeutig aus aber gerade habe ich keine Lösung.
+    Ich gehe weiter auf Part 16
+    Link: https://github.com/martindubb/nodejsmongodbmozilladeutsch/blob/main/Express-Tutorial-Teil-15.md
+-Part 16
+    Meine Konzentration lässt anch ich wei was ich mache aber bin nicht mehr ganz bei der sache.
+    Ich werde Punkt 17 weiter machen und danach abgeben. Die Chalanges aus 11 werde ich über die Tage amcehn insofern meine Zeit es zulässt
+    um das Tutorial abzuschließen.
+    Link: https://github.com/martindubb/nodejsmongodbmozilladeutsch/blob/main/Express-Tutorial-Teil-16.md
